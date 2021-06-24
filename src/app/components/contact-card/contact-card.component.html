@@ -1,0 +1,12 @@
+<div class="card-box col-md-4">
+    <div class="card-item">
+        <b class="card-title">Name</b><p>{{contact.firstName}} {{contact.lastName}}</p>
+    </div>
+    <div class="card-item">
+        <b class="card-title">Phone</b><p>{{contact.phone}}</p>
+    </div>
+    <div class="card-item">
+        <b class="card-title">Email</b><p>{{contact.email}}</p>
+    </div>
+    <button (click)="showContact(contact)" class='btn btn-info'>Detail</button>
+</div>
