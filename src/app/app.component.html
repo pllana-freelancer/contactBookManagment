@@ -1,0 +1,17 @@
+<section>
+  <div class="container">
+      <div>
+        <h4>Contacts-Book Management</h4>
+      </div>
+      <div>
+        <button (click)="addContact()" class='btn btn-info'>Add Contact</button>
+      </div> 
+      <br> 
+      <div class="grid">
+        <ng-container *ngFor="let contact of contacts | async">
+        <app-contact-card [contact]="contact"></app-contact-card>
+      </ng-container>
+      </div>
+
+  </div>
+</section>
