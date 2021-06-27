@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { Contact } from './store/models/contact.model';
 import { AppState } from './store/models/app-state.model';
 import { MatDialog } from '@angular/material/dialog';
-import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
 import { ContactAddComponent } from './components/contact-add/contact-add.component';
-import { ContactCardComponent } from './components/contact-card/contact-card.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +13,7 @@ import { ContactCardComponent } from './components/contact-card/contact-card.com
 })
 export class AppComponent implements OnInit {
   contacts: Observable<Array<Contact>>;
+  selectedContact: Contact;
 
   constructor(private store: Store<AppState>, public dialog: MatDialog) {}
 
@@ -24,5 +23,9 @@ export class AppComponent implements OnInit {
 
   addContact() {
     this.dialog.open(ContactAddComponent);
+  }
+
+  onSelect(contact: Contact): void {
+    this.selectedContact = contact;
   }
 }
